@@ -1,0 +1,4 @@
+To dos are specified in the code. Main thing would be to add the control function\
+On the very top, there are two variables trial and record. Those let you control whether you save the animation as a gif or not, with the trial number being the file name.\
+In the animation, the red box corresponds to motor 1 (1st input), and green corresponds to motor 2.\
+To run the simulation, simply navigate to this directory and run the main.m file. The dynamic.m file should not be changed, and the animate file should only be change if you want to change to axis limits (near top of the script, xlim, ylim, zlim)
