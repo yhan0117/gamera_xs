@@ -6,9 +6,6 @@ trial = 1;
 
 
 %% Parameters
-% TODO: 
-%   Find parameters of the vehicle
-
 d = 1;      % arm length
 p.m = 4;    % quadcopter mass
 p.g = 1;    % gravity 
@@ -40,25 +37,24 @@ z0 = zeros(12,1);               % initial state
 
 
 %% Controls 
-% TODO:
-%   figure out all parameters you need, e.g. control gains 
-%   collect those params into a struct
-% 
-%   write a function representing the control logic (as its own file)
-%   this function should return the motor command values as a 4x1 vector
-% 
-%   add zd (the desired states aka reference)
+% desired states
+k.zd = [1 0 0 0];
 
-% example parameter
-kp = 1;
-kd = 1;
-k.pid = [kp,kd];
+% control gains
+k.kz = 6;
+k.kdz = 0.3;
+k.kp = 1;
+k.kdp = 1;
+k.kq = 1;
+k.kdq = 1;
+k.kr = 1;
+k.kdr = 1;
 
 % dummy input for testing
-u = @(t,z)[1.01,1,0.99,1]';
+% u = @(t,z)[1.01,1,0.99,1]';
 
 % feedback controller u = f(t,z) by calling the control function
-% u = @(t,z)control(t,z,k);
+u = @(t,z)control(t,z,k,p);
 
 
 %% Simultation
@@ -79,8 +75,15 @@ end
 
 %% Plot 
 % TODO:
-%   Plot the states and input trajectory (also reference signal u(t)) 
-%   Try to make this its own file
+%   Plot the states and input trajectory (also reference signal u(t))
+% figure
+% zdirect = [z(:,9), z(:,3), k.zd(1)*ones(size(z(:,3)))];
+% plot(t_s,zdirect);
+% xlabel('Time', 'FontSize', 14);
+% ylabel('Height', 'FontSize', 14);
+% % title('Nice-Looking MATLAB Plot', 'FontSize', 16);
+% grid on;
+% %   Try to make this its own file
 
 
 %% Animation
@@ -99,11 +102,11 @@ end
 figure(2); clf;
 set(gcf,"position", [0,0,900,600])  % set window size
 movegui(gcf, 'center');             % center animation
-view(-27.5,25);                     % initial view angle, adjustable
+view(90,0);                     % initial view angle, adjustable
 
 animate(t_s,z,p,filename,record,fps)    % <-- produce animation
 
 disp("Done!!")
-close all
+%close all
 
 

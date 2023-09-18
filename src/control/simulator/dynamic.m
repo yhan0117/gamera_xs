@@ -32,7 +32,8 @@ function dz = dynamic(t,z,u,p)
     R = p.R;    % rotation matrix B_R_I
 
     % actuator dynamics -> transformed inputs
-    U = K*(u.^2);
+    % U = K*(u.^2);
+    U = K*u;
 
     % evaluate rotation matrices
     R = R(z(4),z(5),z(6));
