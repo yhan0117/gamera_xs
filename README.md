@@ -8,7 +8,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 -->
 <div align="center">
 
-  <img src="2023 Timeline Overview - Gantt.jpg" alt="logo"/>
+  <img src="docs/2023 Timeline Overview - Gantt.jpg" alt="logo"/>
   <h1>Awesome Readme Template</h1>
   
   <p>
