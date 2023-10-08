@@ -9,10 +9,10 @@ Maybe you can mention me or this repo in the acknowledgements too
 <div align="center">
 
   <img src="docs/2023 Timeline Overview - Gantt.jpg" alt="logo"/>
-  <h1>Awesome Readme Template</h1>
+  <h1>Welcome to Gamera-XS!</h1>
   
   <p>
-    An awesome README template for your projects! 
+    Our eXtra Small version of our project Gamnera-S! 
   </p>
   
   
