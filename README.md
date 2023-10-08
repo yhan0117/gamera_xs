@@ -16,7 +16,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   </p>
   
   
-<!-- Badges -->
+<!-- Badges
 <p>
   <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
@@ -37,6 +37,7 @@ Maybe you can mention me or this repo in the acknowledgements too
     <img src="https://img.shields.io/github/license/Louis3797/awesome-readme-template.svg" alt="license" />
   </a>
 </p>
+-->
    
 <h4>
     <a href="https://github.com/Louis3797/awesome-readme-template/">View Demo</a>
@@ -56,6 +57,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 - [About the Project](#star2-about-the-project)
   * [Screenshots](#camera-screenshots)
+  * [What is this?](#book-what-is-this)
   * [Tech Stack](#space_invader-tech-stack)
   * [Features](#dart-features)
   * [Color Reference](#art-color-reference)
@@ -88,6 +90,8 @@ Maybe you can mention me or this repo in the acknowledgements too
   <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
 </div>
 
+### :book: What is this?
+First off, let us talk about Gamera-S.
 
 <!-- TechStack -->
 ### :space_invader: Tech Stack
