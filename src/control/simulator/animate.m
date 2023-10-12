@@ -14,7 +14,7 @@ function animate(t_s,z_,p,filename,record,fps)
     zlabel('z', 'Interpreter', 'Latex')
     
     grid minor; axis equal; rotate3d on;
-    xlim([-1 1]); ylim([-1 1]); zlim([-1 1]); 
+    xlim([-50 50]); ylim([-50 50]); zlim([-20 20]); 
 
     % plotting with no color to set axis limits
     plot3(x,y,z,'Color','none');
@@ -24,9 +24,9 @@ function animate(t_s,z_,p,filename,record,fps)
     m = scatter3(x(1),y(1),z(1),'filled','b','square');
     
     % draw the quad
-    l = 0.125;
-    r = 0.04;
-    h = 0.02;
+    l = 1.25;
+    r = 0.4;
+    h = 0.1;
     r_mg = [-l 0 0;0 -l 0;l 0 0;0 l 0];
     mtr = R(1)*r_mg.'+ [x(1) y(1) z(1)].';
     v = [r -r -h; r r -h; -r r -h; -r -r -h;r -r h; r r h; -r r h; -r -r h];

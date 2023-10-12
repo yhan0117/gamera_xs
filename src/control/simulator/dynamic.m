@@ -19,7 +19,7 @@ function dz = dynamic(t,z,u,p)
     
     % control law
     u = u(t,z);
-    
+    uu = u;
     % TODO: 
     %   add saturation, aka max torque the motors can realistically achieve
 
@@ -32,8 +32,14 @@ function dz = dynamic(t,z,u,p)
     R = p.R;    % rotation matrix B_R_I
 
     % actuator dynamics -> transformed inputs
-    % U = K*(u.^2);
-    U = K*u;
+    if t > 2 && t < 2.5
+        uu(3) = uu(3) + 0.05; 
+        uu(1) = uu(1) - 0.05; 
+        uu(2) = uu(2) + 0.01; 
+        uu(4) = uu(4) - 0.01; 
+    end
+    U = K*(uu.^2);
+    % U = K*u;
 
     % evaluate rotation matrices
     R = R(z(4),z(5),z(6));
@@ -54,4 +60,5 @@ function dz = dynamic(t,z,u,p)
     dz(10) = (z(11)*z(12)*(I(2)-I(3)) + U(2))/I(1);
     dz(11) = (z(10)*z(12)*(I(3)-I(1)) + U(3))/I(2);
     dz(12) = (z(10)*z(11)*(I(2)-I(3)) + U(4))/I(3);
+    dz = [dz;u];
 end

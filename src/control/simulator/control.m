@@ -30,13 +30,13 @@ function u = control(t,z,c,p)
     
     % PD control 
     u = zeros(4,1);
-    u(1) = kz*ez + kdz*edz;
+    u(1) = -982;
     u(2) = kp*ep + kdp*edp;
     u(3) = kq*eq + kdq*edq;
     u(4) = kr*er + kdr*edr;
 
     % saturation
-    u = p.K\(-u);
+    u = sqrt(p.K\(-u));
 
     % example dummy control law 
     % u = repmap(c.kp*z(1) + c.kd*z(2),4);
